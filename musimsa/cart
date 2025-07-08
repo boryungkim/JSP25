@@ -1,0 +1,9 @@
+CREATE TABLE cart (
+  cart_id INT AUTO_INCREMENT PRIMARY KEY,
+  member_id VARCHAR(20) NOT NULL,
+  product_id VARCHAR(20) NOT NULL,
+  quantity INT DEFAULT 1,
+  added_date DATETIME DEFAULT NOW(),
+  FOREIGN KEY (member_id) REFERENCES member(id),
+  FOREIGN KEY (product_id) REFERENCES product(id)
+);
